@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Styles from './App.module.scss';
-import ListGroup from 'react-bootstrap/ListGroup';
-import CardPresente from './CardPresente';
-import { Card, Button, Dropdown, DropdownButton, InputGroup, FormControl } from 'react-bootstrap';
+import { Button, Dropdown, DropdownButton, InputGroup, FormControl } from 'react-bootstrap';
 
 import { items, orderTypes, onlineStores } from './data/data2';
 
