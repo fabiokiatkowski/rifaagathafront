@@ -6,12 +6,27 @@
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   height: 99vh;
+  flex-direction: column;
 }
 .Card {
   width: 25%;
   padding: 5px;
+}
+.info {
+  border: 1px solid black;
+  height: 200px;
+  width: 700px;
+}
+.info2 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5em 5em;
 }
 
 .App-logo {
