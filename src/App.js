@@ -32,7 +32,7 @@ function App() {
       </div>
       <br></br>
       <h3>Como funciona?</h3>
-      <h4>Cada kit vale um número da sorte.</h4>
+      <h4>Cada item vale um número da sorte.</h4>
       <div className={Styles.info}>
         <ul>
           <li>Você escolhe o meu presentinho em <b>Selecionar o presentinho da Ágatha</b></li>
@@ -40,7 +40,7 @@ function App() {
           <li>Se for online, mamãe escolheu algumas lojas para facilitar.</li>
         </ul>
         <p>
-          Se for entregar em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo :D
+          Se for entregar em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo
         </p>
         <p>
           Se for online você pode escolher uma das opções e mandar o número do pedido, mamãe irá buscar para mim. Mas
