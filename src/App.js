@@ -24,7 +24,7 @@ function App() {
         <p>
           Gostaria muito de ter vocês todos comigo no meu chá mas devido
           a tudo o que esta acontecendo ai fora, e para segurança de todos, mamãe e papai resolveram
-          inovar. =)
+          inovar
         </p>
         <p>
           Juntos eles bolaram minha rifa, vamos participar?
@@ -35,12 +35,12 @@ function App() {
       <h4>Cada kit vale um número da sorte.</h4>
       <div className={Styles.info}>
         <ul>
-          <li>Você escolhe o meu presentinho no <b>Selecionar o presentinho da Ágatha</b></li>
+          <li>Você escolhe o meu presentinho em <b>Selecionar o presentinho da Ágatha</b></li>
           <li>Depois você esolhe como você vai entregar.</li>
-          <li>Se for online, mamãe escolher algumas lojas para facilitar.</li>
+          <li>Se for online, mamãe escolheu algumas lojas para facilitar.</li>
         </ul>
         <p>
-          Se for entregar em Joinville podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo :D
+          Se for entregar em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo :D
         </p>
         <p>
           Se for online você pode escolher uma das opções e mandar o número do pedido, mamãe irá buscar para mim. Mas
