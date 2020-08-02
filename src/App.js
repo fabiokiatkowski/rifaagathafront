@@ -11,7 +11,7 @@ function App() {
   const [store, setStore] = useState(null);
   return (
     <Container fluid className={["d-flex", "flex-column", "align-items-center", "justify-content-start", Styles.App]}>
-      <div className="d-flex justify-content-start" style={{ width: '50%' }}>
+      <div className="d-flex justify-content-center" style={{ width: '50%' }}>
         <LogoHeader />
       </div>
       <div className="text-center">
