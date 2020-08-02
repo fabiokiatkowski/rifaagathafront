@@ -14,7 +14,7 @@ const orderTypes = [
     "Comprar online",
 ]
 const onlineStores = [
-    "Drogaria Catarinense",
-    "Droga Raia"
+    "Drogaria Catarinense - Jaraguá - Rua Epitácio Pessoa",
+    "Droga Raia - Jaraguá - Rua Epitácio Pessoa"
 ]
 export { items, orderTypes, onlineStores };

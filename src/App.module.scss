@@ -1,24 +1,18 @@
 .App {
-  padding: 5px;
   background-color: lightslategray;
+  min-height: 100vh;
 }
 .Container {
   display: flex;
-  flex-wrap: wrap;
-  overflow: auto;
+  flex: 1;
   justify-content: flex-start;
   align-items: center;
-  height: 99vh;
   flex-direction: column;
 }
-.Card {
-  width: 25%;
-  padding: 5px;
-}
 .info {
-  border: 1px solid black;
-  height: 200px;
-  width: 700px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .info2 {
   display: flex;
@@ -26,7 +20,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 5em 5em;
+  padding: 1em 5em 0em;
 }
 
 .App-logo {
