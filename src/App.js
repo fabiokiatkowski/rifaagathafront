@@ -11,7 +11,7 @@ function App() {
   const [store, setStore] = useState(null);
   return (
     <Container fluid className={["d-flex", "flex-column", "align-items-center", "justify-content-start", Styles.App]}>
-      <div className="d-flex" style={{ width: '50%' }}>
+      <div className="d-flex justify-content-start" style={{ width: '50%' }}>
         <LogoHeader />
       </div>
       <div className="text-center">
@@ -62,7 +62,7 @@ function App() {
         </ul>
       </div>
       <br></br>
-      <Container fluid className="d-flex flex-column align-items-center">
+      <Container fluid className="d-flex flex-column align-items-center" style={{ marginBottom: '2vh' }}>
         <DropdownButton title="Selecionar o presentinho da Ágatha" onSelect={e => setSelectedItem(e)}>
           {
             items.map(t => <Dropdown.Item eventKey={t}>{t}</Dropdown.Item>)
