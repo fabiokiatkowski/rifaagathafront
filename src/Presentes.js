@@ -5,7 +5,7 @@ import { Table, FormCheck } from 'react-bootstrap';
 const Presente = () => {
   const [infos, setInfos] = useState([]);
   const loadData = async () => {
-    const { data } = await Axios.get('http://localhost:3031/users');
+    const { data } = await Axios.get('https://meuchaagatha.herokuapp.com/users');
     console.log(data);
     setInfos(data);
   }

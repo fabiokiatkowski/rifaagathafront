@@ -16,7 +16,7 @@ function App() {
   const [order, setOrder] = useState('');
   const [comprados, setComprados] = useState([]);
   const loadItems = async () => {
-    const { data } = await Axios.get('http://localhost:3031/users');
+    const { data } = await Axios.get('https://meuchaagatha.herokuapp.com/users');
     const itemsComprados = _.groupBy(data, 'item');
     setComprados(itemsComprados || []);
   }
@@ -31,7 +31,7 @@ function App() {
       deliveryMode: orderType,
       store,
     }
-    Axios.post('http://localhost:3031/users', payload);
+    Axios.post('https://meuchaagatha.herokuapp.com/users', payload);
     loadItems();
     setSelectedItem(null);
     setOrderType(null);
