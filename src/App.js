@@ -1,16 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
+import _ from 'lodash';
 import Styles from './App.module.scss';
 import { ReactComponent as LogoHeader } from './images/segonha2.svg';
 import { Button, Dropdown, DropdownButton, Container, Form, Col } from 'react-bootstrap';
 
 import { items, orderTypes, onlineStores } from './data/data2';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [orderType, setOrderType] = useState(null);
   const [store, setStore] = useState(null);
+  const [name, setName] = useState('');
+  const [order, setOrder] = useState('');
+  const [comprados, setComprados] = useState([]);
+  const loadItems = async () => {
+    const { data } = await Axios.get('http://localhost:3031/users');
+    const itemsComprados = _.groupBy(data, 'item');
+    setComprados(itemsComprados || []);
+  }
+  useEffect(() => {
+    loadItems();
+  }, []);
+  const handleEnviar = () => {
+    const payload = {
+      name,
+      order,
+      item: selectedItem,
+      deliveryMode: orderType,
+      store,
+    }
+    Axios.post('http://localhost:3031/users', payload);
+    loadItems();
+    setSelectedItem(null);
+    setOrderType(null);
+    setStore(null);
+    setName('');
+    setOrder('');
+    toast("Obrigada pelo presentinho", {
+      position: "top-center",
+      autoClose: 5000,
+    })
+  }
   return (
     <Container fluid className={["d-flex", "flex-column", "align-items-center", "justify-content-start", Styles.App]}>
+      <ToastContainer />
       <div className="d-flex justify-content-center" style={{ width: '50%' }}>
         <LogoHeader />
       </div>
@@ -65,7 +100,7 @@ function App() {
       <Container fluid className="d-flex flex-column align-items-center" style={{ marginBottom: '2vh' }}>
         <DropdownButton title="Selecionar o presentinho da Ágatha" onSelect={e => setSelectedItem(e)}>
           {
-            items.map(t => <Dropdown.Item eventKey={t}>{t}</Dropdown.Item>)
+            items.map(t => <Dropdown.Item key={t.name} eventKey={t.name} disabled={comprados[t.name] && comprados[t.name].length >= t.qtd}>{t.name}</Dropdown.Item>)
           } 
         </DropdownButton>
         {
@@ -75,7 +110,7 @@ function App() {
           selectedItem && (
             <DropdownButton title="Selecionar forma de entrega" onSelect={e => setOrderType(e)}>
               {
-                orderTypes.map(t => <Dropdown.Item eventKey={t}>{t}</Dropdown.Item>)
+                orderTypes.map(t => <Dropdown.Item key={t} eventKey={t}>{t}</Dropdown.Item>)
               } 
             </DropdownButton>
           )
@@ -87,7 +122,7 @@ function App() {
           orderType === "Comprar online" && (
             <DropdownButton title="Selecionar a loja da compra" onSelect={e => setStore(e)}>
               {
-                onlineStores.map(t => <Dropdown.Item eventKey={t}>{t}</Dropdown.Item>)
+                onlineStores.map(t => <Dropdown.Item key={t} eventKey={t}>{t}</Dropdown.Item>)
               } 
             </DropdownButton>
           )
@@ -109,6 +144,8 @@ function App() {
                     className="mb-2"
                     id="inlineFormInput"
                     placeholder="Nome"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </Col>
                 {
@@ -121,11 +158,13 @@ function App() {
                       className="mb-2"
                       id="inlineFormInput"
                       placeholder="Número do pedido"
+                      value={order}
+                      onChange={(e) => setOrder(e.target.value)}
                     />
                   </Col>
                 }
                 <Col xs="auto">
-                  <Button type="button" className="mb-2">
+                  <Button type="button" className="mb-2" onClick={handleEnviar}>
                     Enviar
                   </Button>
                 </Col>
