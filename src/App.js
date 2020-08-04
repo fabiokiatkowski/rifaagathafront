@@ -46,7 +46,7 @@ function App() {
   return (
     <Container fluid className={["d-flex", "flex-column", "align-items-center", "justify-content-start", Styles.App]}>
       <ToastContainer />
-      <div className="d-flex justify-content-start" style={{ width: '50%' }}>
+      <div className="d-flex justify-content-center" style={{ width: '50%' }}>
         <LogoHeader />
       </div>
       <div className="text-center">
@@ -62,45 +62,43 @@ function App() {
           inovar
         </p>
         <p>
-          Juntos eles bolaram minha rifa, vamos participar?
+          Juntos eles bolaram meu chá premiado, vamos participar?
         </p>
       </div>
-      <br></br>
       <h3 className={Styles.info}>Como funciona?</h3>
-      <h4 className={Styles.info}>Cada item vale um número da sorte.</h4>
+      <h5 className={Styles.info}>Cada item vale um número da sorte.</h5>
       <div className={Styles.info}>
         <ul>
-          <li>Você escolhe o meu presentinho em <b>Selecionar o presentinho da Ágatha</b></li>
-          <li>Depois você esolhe como você vai entregar.</li>
-          <li>Se for online, mamãe escolheu algumas lojas para facilitar.</li>
+          <li>Você escolhe um item na listinha que a mamãe preparaou em <b>Selecionar o presentinho da Ágatha</b></li>
+          <li>
+            Depois você escolhe a forma que você quer comprar, pois temos três sugestões.
+            <ul>
+              <li>Comprar nas farmácias Catarineses ou Droga Raia e pedir para retirar na loja da Rua Epitácio Pessoa (Jaraguá do Sul)</li>
+              <li>Comprar pela lista de bêbe que a mamãe montou com todo carinho na Amazom. (O link estará logo abaixo após selecionar meu presentinho)</li>
+              <li>
+                Comprar aonde você desejar, desde que seja o item que você escolheu, e entregar nos seguinte endereços (lembrando que sempre devemos nos proteger):
+                <ul>
+                  <li>Em Joinville, podem deixar na casa da minha vovó Tere.</li>
+                  <li>Em Jaraguá é aqui na minha casa mesmo.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>No final é muito importante você enviar o seu nome, assim o papai saberá que tenho novos presentinhos.</li>
+          <li>Após o papai receber o meu presentinho, ele irá gerar o número da sorte e avisar por Whatsapp e então você estará concorrendo.</li>
         </ul>
-        <p>
-          Prefiro a compra online, porque a segurança de todos é mais importante. Mas se não puderem, existem algumas
-          formas de entregar.
-        </p>
-        <p>
-          Em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo. (Mas vamos se proteger sempre.)
-        </p>
-        <p>
-          Para comprar online você pode escolher uma das lojas que a mamãe escolheu e fazer o pedido, depois de concluído
-          e com o número do pedido em mãos você pode voltar aqui e preencher as informações abaixo. Se comprarem em alguma 
-          outra loja ou se a entrega for feita aqui em casa, podem nos avisar colocando o nome no campo de PEDIDO.
-          Para entregar na minha casa o endereço esta ai embaixo.
-        </p>
-        <ul style={{ listStyle: 'none' }}>
-          <li>
-            <b>Cidade:</b> Jaraguá do Sul
-          </li>
-          <li>
-            <b>Rua:</b> Sebastião Pereira, 21 - apt 306
-          </li>
-          <li>
-            <b>CEP:</b> 89355-074
-          </li>
-          <li>
-            <b>Ponto de Referência:</b> Rua do PAMA. Em frente ao container rosa.
-          </li>
+      </div>
+      <h3 className={Styles.info}>Quais são os prêmios?</h3>
+      <div className={Styles.info}>
+        <ul>
+          <li>R$ 150,00</li>
+          <li>R$ 100,00</li>
+          <li>Cesta de chocolate</li>
         </ul>
+      </div>
+      <h3 className={Styles.info}>Data do sorteio</h3>
+      <div className={Styles.info}>
+        15/09/2020
       </div>
       <br></br>
       <Container fluid className="d-flex flex-column align-items-center" style={{ marginBottom: '2vh' }}>
@@ -179,6 +177,26 @@ function App() {
           </Container>
         )
       }
+      <br></br>
+      <h3 className={Styles.info}>Informações Importantes</h3>
+      <div className={Styles.info}>
+        <h4>Quanto mais números mais chances de ganhar.</h4>
+        Meu endereço:
+        <ul>
+          <li>
+            <b>Cidade:</b> Jaraguá do Sul
+          </li>
+          <li>
+            <b>Rua:</b> Sebastião Pereira, 21 - apt 306
+          </li>
+          <li>
+            <b>CEP:</b> 89355-074
+          </li>
+          <li>
+            <b>Ponto de Referência:</b> Rua do PAMA. Em frente ao container rosa.
+          </li>
+        </ul>
+      </div>
     </Container>
   );
 }
