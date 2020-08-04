@@ -23,7 +23,6 @@ const Presente = () => {
               <th>Nr. Pedido</th>
               <th>Item</th>
               <th>Entrega</th>
-              <th>Local</th>
               <th>Nr. Sorte</th>
               <th>Confirmado</th>
             </tr>
@@ -38,7 +37,6 @@ const Presente = () => {
                     <td>{info.order}</td>
                     <td>{info.item}</td>
                     <td>{info.deliveryMode}</td>
-                    <td>{info.store}</td>
                     <td>{info.luckyNumber}</td>
                     <td><FormCheck checked={info.confirmed}/></td>
                   </tr>

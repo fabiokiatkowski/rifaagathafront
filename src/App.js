@@ -5,8 +5,9 @@ import Styles from './App.module.scss';
 import { ReactComponent as LogoHeader } from './images/segonha2.svg';
 import { Button, Dropdown, DropdownButton, Container, Form, Col } from 'react-bootstrap';
 
-import { items, orderTypes, onlineStores } from './data/data2';
+import { items, orderTypes } from './data/data2';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -28,8 +29,7 @@ function App() {
       name,
       order,
       item: selectedItem,
-      deliveryMode: orderType,
-      store,
+      deliveryMode: orderType.name,
     }
     Axios.post('https://meuchaagatha.herokuapp.com/users', payload);
     loadItems();
@@ -38,7 +38,7 @@ function App() {
     setStore(null);
     setName('');
     setOrder('');
-    toast("Obrigada pelo presentinho", {
+    toast("Obrigada pelo presentinho. Boa sorte!!!", {
       position: "top-center",
       autoClose: 5000,
     })
@@ -112,27 +112,26 @@ function App() {
         }
         {
           selectedItem && (
-            <DropdownButton title="Selecionar forma de entrega" onSelect={e => setOrderType(e)}>
+            <DropdownButton
+              title="Selecionar forma da compra"
+              onSelect={e => {
+                const orderTypeObject = orderTypes.find(o => o.name === e);
+                setOrderType(orderTypeObject);
+              }}
+            >
               {
-                orderTypes.map(t => <Dropdown.Item key={t} eventKey={t}>{t}</Dropdown.Item>)
+                orderTypes.map(t => {
+                  return <Dropdown.Item key={t.name}  eventKey={t.name}>{t.name}</Dropdown.Item>
+                })
               } 
             </DropdownButton>
           )
         }
         {
-          orderType && <span>{orderType}</span>
+          orderType && <span>{orderType.name}</span>
         }
         {
-          orderType === "Comprar online" && (
-            <DropdownButton title="Selecionar a loja da compra" onSelect={e => setStore(e)}>
-              {
-                onlineStores.map(t => <Dropdown.Item key={t} eventKey={t}>{t}</Dropdown.Item>)
-              } 
-            </DropdownButton>
-          )
-        }
-        {
-          orderType === "Comprar online" && store && <span>{store} - clique aqui para ir para o site</span>
+          orderType && orderType.url && <a target="_blank" rel="noopener noreferrer" href={orderType.url}>Clique aqui para acessar o site</a>
         }
       </Container>
       {
@@ -153,7 +152,7 @@ function App() {
                   />
                 </Col>
                 {
-                  (orderType === "Comprar online" && store) &&
+                  (orderType.name === "Farmácia Catarinense" || orderType.name === "Farmácia Droga Raia") &&
                   <Col xs="auto">
                     <Form.Label htmlFor="inlineFormInputGroup" srOnly>
                       Número do Pedido
