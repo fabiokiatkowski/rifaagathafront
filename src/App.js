@@ -46,11 +46,11 @@ function App() {
   return (
     <Container fluid className={["d-flex", "flex-column", "align-items-center", "justify-content-start", Styles.App]}>
       <ToastContainer />
-      <div className="d-flex justify-content-center" style={{ width: '50%' }}>
+      <div className="d-flex justify-content-start" style={{ width: '50%' }}>
         <LogoHeader />
       </div>
       <div className="text-center">
-        <h1>Rifa da nossa pequena Ágatha</h1>
+        <h1>Chá premiado da Ágatha</h1>
       </div>
       <div className={Styles.info}>
         <p>
@@ -66,8 +66,8 @@ function App() {
         </p>
       </div>
       <br></br>
-      <h3>Como funciona?</h3>
-      <h4>Cada item vale um número da sorte.</h4>
+      <h3 className={Styles.info}>Como funciona?</h3>
+      <h4 className={Styles.info}>Cada item vale um número da sorte.</h4>
       <div className={Styles.info}>
         <ul>
           <li>Você escolhe o meu presentinho em <b>Selecionar o presentinho da Ágatha</b></li>
@@ -75,11 +75,17 @@ function App() {
           <li>Se for online, mamãe escolheu algumas lojas para facilitar.</li>
         </ul>
         <p>
-          Se for entregar em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo
+          Prefiro a compra online, porque a segurança de todos é mais importante. Mas se não puderem, existem algumas
+          formas de entregar.
         </p>
         <p>
-          Se for online você pode escolher uma das opções e mandar o número do pedido, mamãe irá buscar para mim. Mas
-          se quiser mandar entregar na minha casa o endereço esta ai embaixo.
+          Em Joinville, podem deixar na casa da minha vovó Tere e em Jaraguá é aqui na minha casa mesmo. (Mas vamos se proteger sempre.)
+        </p>
+        <p>
+          Para comprar online você pode escolher uma das lojas que a mamãe escolheu e fazer o pedido, depois de concluído
+          e com o número do pedido em mãos você pode voltar aqui e preencher as informações abaixo. Se comprarem em alguma 
+          outra loja ou se a entrega for feita aqui em casa, podem nos avisar colocando o nome no campo de PEDIDO.
+          Para entregar na minha casa o endereço esta ai embaixo.
         </p>
         <ul style={{ listStyle: 'none' }}>
           <li>
