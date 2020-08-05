@@ -7,7 +7,6 @@ import { Button, Dropdown, DropdownButton, Container, Form, Col } from 'react-bo
 
 import { items, orderTypes } from './data/data2';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
 
 function App() {
   const [selectedItem, setSelectedItem] = useState(null);
