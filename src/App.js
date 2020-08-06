@@ -72,7 +72,7 @@ function App() {
           <li>
             Depois você escolhe a forma que você quer comprar, pois temos três sugestões.
             <ul>
-              <li>Comprar nas farmácias Catarineses ou Droga Raia e pedir para retirar na loja da Rua Epitácio Pessoa (Jaraguá do Sul)</li>
+              <li>Comprar nas farmácias Catarineses ou Droga Raia e pedir para entregar na minha casa (O endereço esta no final da página).</li>
               <li>Comprar pela lista de bêbe que a mamãe montou com todo carinho na Amazom. (O link estará logo abaixo após selecionar meu presentinho)</li>
               <li>
                 Comprar aonde você desejar, desde que seja o item que você escolheu, e entregar nos seguinte endereços (lembrando que sempre devemos nos proteger):
