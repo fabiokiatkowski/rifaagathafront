@@ -6,47 +6,50 @@ const Presente = () => {
   const [infos, setInfos] = useState([]);
   const loadData = async () => {
     const { data } = await Axios.get('https://meuchaagatha.herokuapp.com/users');
-    console.log(data);
     setInfos(data);
   }
   useEffect(() => {
     loadData();
-  }, [])
-    return (
-      <div>
-        <h1>Lista de Presentes Comprados</h1>
-        <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Nr. Pedido</th>
-              <th>Item</th>
-              <th>Entrega</th>
-              <th>Nr. Sorte</th>
-              <th>Confirmado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              infos.map(info => {
-                return (
-                  <tr key={info._id}>
-                    <td>{info._id}</td>
-                    <td>{info.name}</td>
-                    <td>{info.order}</td>
-                    <td>{info.item}</td>
-                    <td>{info.deliveryMode}</td>
-                    <td>{info.luckyNumber}</td>
-                    <td><FormCheck checked={info.confirmed}/></td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </Table>
-      </div>
-    )
+  }, []);
+  const handleConfirmado = async (info) => {
+    const { data } = await Axios.put(`https://meuchaagatha.herokuapp.com/users/${info._id}`, { ...info, confirmed: !info.confirmed });
+    setInfos(data);
+  }
+  return (
+    <div>
+      <h1>Lista de Presentes Comprados</h1>
+      <Table striped bordered hover responsive>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Nr. Pedido</th>
+            <th>Item</th>
+            <th>Entrega</th>
+            <th>Nr. Sorte</th>
+            <th>Confirmado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            infos.map(info => {
+              return (
+                <tr key={info._id}>
+                  <td>{info._id}</td>
+                  <td>{info.name}</td>
+                  <td>{info.order}</td>
+                  <td>{info.item}</td>
+                  <td>{info.deliveryMode}</td>
+                  <td>{info.luckyNumber}</td>
+                  <td><FormCheck checked={info.confirmed} onChange={() => handleConfirmado(info)}/></td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </Table>
+    </div>
+  )
 }
 
 export default Presente;
