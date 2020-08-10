@@ -188,7 +188,7 @@ function App() {
             <b>Rua:</b> Sebastião Pereira, 21 - apt 306
           </li>
           <li>
-            <b>CEP:</b> 89355-074
+            <b>CEP:</b> 89255-074
           </li>
           <li>
             <b>Ponto de Referência:</b> Rua do PAMA. Em frente ao container rosa.
