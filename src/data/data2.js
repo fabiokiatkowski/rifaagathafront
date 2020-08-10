@@ -12,7 +12,7 @@ const items = [
     { name: "Manta de malha", qtd: 1,},
     { name: "Toalha de banho", qtd: 3,},
     { name: "Cuero", qtd: 2,},
-    { name: "Pomarada para assaduras e Lenço Umidecido", qtd: 3,},
+    { name: "Pomada para assaduras e Lenço Umidecido", qtd: 3,},
 ];
 const orderTypes = [
     { name: "Farmácia Catarinense", url: "https://www.drogariacatarinense.com.br"},
