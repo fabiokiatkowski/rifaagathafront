@@ -1,5 +1,5 @@
 const items = [
-    { name: "Fraldas P Pampers®", qtd: 14,},
+    { name: "Fraldas P Pampers®", qtd: 10,},
     { name: "Fraldas M Pampers®", qtd: 34,},
     { name: "Fraldas G Pampers®", qtd: 55,},
     { name: "Creme Bepantol® e Lenços Umidecido", qtd: 6,},

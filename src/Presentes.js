@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
+import _ from 'lodash';
 import { Table, FormCheck } from 'react-bootstrap';
 
 const Presente = () => {
@@ -48,6 +49,17 @@ const Presente = () => {
           }
         </tbody>
       </Table>
+      <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '2vw' }}>
+        {
+          _.chain(infos)
+            .groupBy('item')
+            .map((v, k) => ({ title: k, size: v.length }))
+            .value()
+            .map(v => (
+              <span><b>{v.title}:</b>{v.size}</span>
+            ))
+        }
+      </div>
     </div>
   )
 }
