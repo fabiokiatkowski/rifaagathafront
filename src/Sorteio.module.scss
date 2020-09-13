@@ -1,0 +1,13 @@
+.App {
+  background-color: #E0E0E0;
+  min-height: 100vh;
+  li {
+    list-style: disc;
+  }
+  li li {
+    list-style: decimal;
+  }
+  li li li {
+    list-style: disc;
+  }
+}

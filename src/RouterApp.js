@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import Presente from "./Presentes";
+import Sorteio from "./Sorteio";
 
 const RouterApp = () => {
   return (
@@ -13,6 +14,9 @@ const RouterApp = () => {
       <Switch>
         <Route path="/presentes">
           <Presente />
+        </Route>
+        <Route path="/sorteio">
+          <Sorteio />
         </Route>
         <Route exact path="/">
           <App />
